@@ -1,9 +1,18 @@
 class Book
-  attr_accessor :author, :page_count, :genre
-  attr_reader :title
+  #  keep track of all of the genres of all of the Books we create.
+  attr_accessor :author, :page_count
+  attr_reader :title, :genre
+
+  GENRES = []
 
   def initialize(title)
     @title = title
+    @genre = genre
+  end
+
+  def genre=(genre)
+    @genre = genre
+    GENRES << genre
   end
 
   def turn_page
